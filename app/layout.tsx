@@ -21,9 +21,61 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Progrize',
-  description: 'The Career Platform That Moves You.',
-  generator: 'v0.app',
+  title: {
+    default: 'Progrize — The Career Platform That Moves You Forward',
+    template: '%s | Progrize',
+  },
+  description:
+    'Progrize is the AI-powered career platform that helps you land your next role faster. Get personalised roadmaps, track your skills, and join a community that moves careers forward.',
+  keywords: [
+    'career platform',
+    'job search',
+    'career growth',
+    'skill development',
+    'AI career coach',
+    'professional development',
+    'career roadmap',
+    'job placement',
+  ],
+  authors: [{ name: 'Progrize' }],
+  creator: 'Progrize',
+  metadataBase: new URL('https://progrize.com'),
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://progrize.com',
+    siteName: 'Progrize',
+    title: 'Progrize — The Career Platform That Moves You Forward',
+    description:
+      'AI-powered career platform with personalised roadmaps, skill tracking, and a community built to move your career forward — faster.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Progrize — The Career Platform That Moves You Forward',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Progrize — The Career Platform That Moves You Forward',
+    description:
+      'AI-powered career platform with personalised roadmaps, skill tracking, and a community built to move your career forward — faster.',
+    images: ['/og-image.png'],
+    creator: '@progrize',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export default function RootLayout({
