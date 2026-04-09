@@ -1,7 +1,7 @@
 import React from "react"
 import type { Metadata } from 'next'
 import Script from "next/script"
-import { Instrument_Sans, Instrument_Serif, JetBrains_Mono } from 'next/font/google'
+import { Instrument_Sans, Bricolage_Grotesque, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
@@ -10,10 +10,9 @@ const instrumentSans = Instrument_Sans({
   variable: '--font-instrument'
 });
 
-const instrumentSerif = Instrument_Serif({ 
+const bricolageGrotesque = Bricolage_Grotesque({ 
   subsets: ["latin"],
-  weight: "400",
-  variable: '--font-instrument-serif'
+  variable: '--font-bricolage'
 });
 
 const jetbrainsMono = JetBrains_Mono({ 
@@ -34,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${instrumentSans.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
+      <body className={`${instrumentSans.variable} ${bricolageGrotesque.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
         {children}
         <Analytics />
         <Script src="https://mcp.figma.com/mcp/html-to-design/capture.js" strategy="afterInteractive" />
