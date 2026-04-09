@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY || "re_dummy");
 
 // Switch from to a verified domain once progrize.com is added in Resend dashboard
 // https://resend.com/domains → Add Domain → progrize.com → add DNS records
