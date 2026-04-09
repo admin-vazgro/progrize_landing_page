@@ -4,32 +4,25 @@ import { useEffect, useState } from "react";
 
 const testimonials = [
   {
-    quote: "Optimus transformed our deployment pipeline. What used to take hours now happens in seconds.",
-    author: "Sarah Chen",
-    role: "CTO",
-    company: "Meridian Labs",
-    metric: "10x faster deployments",
+    quote: "Really my honest review — Progrize will be a real helping hand for people like me who are looking forward to growing their career.",
+    author: "Sarah Khan",
+    role: "Beta User",
+    company: "Progrize",
+    metric: "Active Beta Member",
   },
   {
-    quote: "The developer experience is unmatched. Our team's productivity has never been higher.",
-    author: "Marcus Webb",
-    role: "Engineering Lead",
-    company: "Flux Systems",
-    metric: "40% more features shipped",
+    quote: "The mentorship feature is exactly what I needed. Getting real coaching with someone who knows what they're doing led to a great career outcome.",
+    author: "John Bosa",
+    role: "Mentee",
+    company: "Progrize",
+    metric: "Landed Dream Role",
   },
   {
-    quote: "Finally, infrastructure that scales with our ambition. Zero downtime since we switched.",
-    author: "Elena Rodriguez",
-    role: "VP Engineering",
-    company: "Beacon AI",
-    metric: "99.99% uptime",
-  },
-  {
-    quote: "The integrations are seamless. We connected our entire stack in a single afternoon.",
-    author: "James Liu",
-    role: "Founder",
-    company: "Prism Analytics",
-    metric: "50+ integrations used",
+    quote: "Finally a platform that doesn't feel like a dead end. It's focused, clean, and actually helps you improve and reach your potential.",
+    author: "Emily Chen",
+    role: "Professional",
+    company: "Progrize",
+    metric: "92% CV Score",
   },
 ];
 
@@ -51,12 +44,12 @@ export function TestimonialsSection() {
   const activeTestimonial = testimonials[activeIndex];
 
   return (
-    <section className="relative py-32 lg:py-40 border-t border-foreground/10 lg:pb-14">
+    <section id="testimonials" className="relative py-32 lg:py-40 border-t border-foreground/10 lg:pb-14">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Label */}
         <div className="flex items-center gap-4 mb-16">
           <span className="font-mono text-xs tracking-widest text-muted-foreground uppercase">
-            What people say
+            Built by people who&apos;ve been there
           </span>
           <div className="flex-1 h-px bg-foreground/10" />
           <span className="font-mono text-xs text-muted-foreground">
@@ -138,7 +131,7 @@ export function TestimonialsSection() {
         {/* Company Logos Marquee Label */}
         <div className="mt-24 pt-12 border-t border-foreground/10">
           <p className="font-mono text-xs tracking-widest text-muted-foreground uppercase mb-8 text-center">
-            Trusted by forward-thinking teams
+            Join professionals from leading companies
           </p>
         </div>
       </div>
@@ -148,7 +141,7 @@ export function TestimonialsSection() {
         <div className="flex gap-16 items-center marquee">
           {[...Array(2)].map((_, setIdx) => (
             <div key={setIdx} className="flex gap-16 items-center shrink-0">
-              {["Meridian Labs", "Flux Systems", "Beacon AI", "Prism Analytics", "Nova Tech", "Quantum Corp", "Atlas Digital", "Vertex Labs"].map(
+              {["Google", "Amazon", "Microsoft", "Deloitte", "KPMG", "Accenture", "McKinsey", "Goldman Sachs"].map(
                 (company) => (
                   <span
                     key={`${setIdx}-${company}`}

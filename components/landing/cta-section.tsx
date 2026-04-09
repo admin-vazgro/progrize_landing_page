@@ -4,11 +4,13 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { AnimatedTetrahedron } from "./animated-tetrahedron";
+import { useWaitlist } from "./waitlist-context";
 
 export function CtaSection() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const { openWaitlist } = useWaitlist();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -52,35 +54,28 @@ export function CtaSection() {
               {/* Left content */}
               <div className="flex-1">
                 <h2 className="text-4xl lg:text-7xl font-display tracking-tight mb-8 leading-[0.95]">
-                  Ready to build
+                  Stop Scrolling.
                   <br />
-                  something great?
+                  Start Progressing.
                 </h2>
 
                 <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-xl">
-                  Join thousands of teams shipping faster with Optimus. 
-                  Start free, scale infinitely.
+                  2,800+ professionals are already waiting. Secure your spot before we launch and get early access to every feature — free.
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-start gap-4">
                   <Button
                     size="lg"
+                    onClick={openWaitlist}
                     className="bg-foreground hover:bg-foreground/90 text-background px-8 h-14 text-base rounded-full group"
                   >
-                    Start building free
+                    Join the Waitlist
                     <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="h-14 px-8 text-base rounded-full border-foreground/20 hover:bg-foreground/5"
-                  >
-                    Talk to sales
                   </Button>
                 </div>
 
                 <p className="text-sm text-muted-foreground mt-8 font-mono">
-                  No credit card required
+                  No credit card required • Early access is free
                 </p>
               </div>
 

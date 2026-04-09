@@ -6,27 +6,27 @@ import { Shield, Lock, Eye, FileCheck } from "lucide-react";
 const securityFeatures = [
   {
     icon: Shield,
-    title: "SOC 2 Type II",
-    description: "Independently audited security controls with continuous monitoring.",
+    title: "Your data stays yours",
+    description: "Your CV and career data are never shared with third parties without your explicit consent.",
   },
   {
     icon: Lock,
     title: "End-to-end encryption",
-    description: "AES-256 encryption for data at rest and TLS 1.3 in transit.",
+    description: "All personal data, CV uploads, and career information are encrypted in transit and at rest.",
   },
   {
     icon: Eye,
-    title: "Zero-trust architecture",
-    description: "Every request is authenticated and authorized. No exceptions.",
+    title: "Full profile control",
+    description: "Choose exactly who sees your profile — go invisible to current employer or set custom visibility.",
   },
   {
     icon: FileCheck,
-    title: "GDPR & HIPAA",
-    description: "Full compliance with data protection and healthcare regulations.",
+    title: "GDPR compliant",
+    description: "Full compliance with data protection regulations. Request data deletion at any time.",
   },
 ];
 
-const certifications = ["SOC 2", "ISO 27001", "HIPAA", "GDPR", "CCPA"];
+const certifications = ["GDPR", "CCPA", "Data Privacy", "Secure Upload", "Encrypted"];
 
 export function SecuritySection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -56,16 +56,16 @@ export function SecuritySection() {
           >
             <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
               <span className="w-8 h-px bg-foreground/30" />
-              Security
+              YOUR PRIVACY MATTERS
             </span>
             <h2 className="text-4xl lg:text-6xl font-display tracking-tight mb-8">
-              Trust is
+              Your career data,
               <br />
-              non-negotiable.
+              protected.
             </h2>
             <p className="text-xl text-muted-foreground leading-relaxed mb-12">
-              Enterprise-grade security isn&apos;t optional. It&apos;s built into every layer 
-              of our platform, from infrastructure to application.
+              We take your privacy seriously. Your personal information, CV, and career
+              history are handled with the highest standards of data security.
             </p>
 
             {/* Certifications */}

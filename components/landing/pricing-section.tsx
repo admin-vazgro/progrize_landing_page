@@ -2,59 +2,61 @@
 
 import { useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
+import { useWaitlist } from "./waitlist-context";
 
 const plans = [
   {
-    name: "Starter",
-    description: "For individuals and small projects",
+    name: "Free",
+    description: "For professionals getting started",
     price: { monthly: 0, annual: 0 },
     features: [
-      "Up to 3 projects",
-      "1GB storage",
-      "Community support",
-      "Basic analytics",
-      "SSL certificates",
+      "Public profile & job search",
+      "Apply to unlimited jobs",
+      "Community access",
+      "Basic CV analysis",
+      "Job application tracker",
     ],
-    cta: "Start free",
+    cta: "Join Waitlist",
     popular: false,
   },
   {
-    name: "Pro",
-    description: "For growing teams and businesses",
-    price: { monthly: 29, annual: 24 },
+    name: "Professional",
+    description: "For serious career movers",
+    price: { monthly: 12, annual: 9 },
     features: [
-      "Unlimited projects",
-      "100GB storage",
-      "Priority support",
+      "Everything in Free",
+      "AI-powered CV optimiser",
+      "1:1 mentorship sessions",
+      "Priority job matching",
+      "Referral requests",
+      "Career roadmap",
       "Advanced analytics",
-      "Custom domains",
-      "Team collaboration",
-      "API access",
     ],
-    cta: "Start trial",
+    cta: "Join Waitlist",
     popular: true,
   },
   {
-    name: "Enterprise",
-    description: "For large-scale operations",
+    name: "Organisation",
+    description: "For teams hiring at scale",
     price: { monthly: null, annual: null },
     features: [
-      "Everything in Pro",
-      "Unlimited storage",
-      "24/7 dedicated support",
+      "Everything in Professional",
+      "Vetted talent pool access",
+      "AI candidate matching",
+      "Employer branding tools",
+      "Recruiter dashboard",
+      "Dedicated account manager",
       "Custom integrations",
-      "SLA guarantee",
-      "On-premise option",
-      "Security audit",
-      "Custom contracts",
+      "Priority support",
     ],
-    cta: "Contact sales",
+    cta: "Join Waitlist",
     popular: false,
   },
 ];
 
 export function PricingSection() {
   const [isAnnual, setIsAnnual] = useState(true);
+  const { openWaitlist } = useWaitlist();
 
   return (
     <section id="pricing" className="relative py-32 lg:py-40 border-t border-foreground/10">
@@ -70,7 +72,7 @@ export function PricingSection() {
             <span className="text-stroke">pricing</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-xl">
-            Start free and scale as you grow. No hidden fees, no surprises.
+            Join the waitlist now — pricing locks in at launch. Early adopters get the best rates.
           </p>
         </div>
 
@@ -157,6 +159,7 @@ export function PricingSection() {
 
               {/* CTA */}
               <button
+                onClick={openWaitlist}
                 className={`w-full py-4 flex items-center justify-center gap-2 text-sm font-medium transition-all group ${
                   plan.popular
                     ? "bg-foreground text-primary-foreground hover:bg-foreground/90"
@@ -172,10 +175,10 @@ export function PricingSection() {
 
         {/* Bottom Note */}
         <p className="mt-12 text-center text-sm text-muted-foreground">
-          All plans include automatic updates, HTTPS, and DDoS protection.{" "}
-          <a href="#" className="underline underline-offset-4 hover:text-foreground transition-colors">
-            Compare all features
-          </a>
+          Pricing confirmed at launch. Join the waitlist to lock in early adopter rates.{" "}
+          <button onClick={openWaitlist} className="underline underline-offset-4 hover:text-foreground transition-colors">
+            Secure your spot
+          </button>
         </p>
       </div>
     </section>

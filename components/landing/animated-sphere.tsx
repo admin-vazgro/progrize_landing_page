@@ -76,8 +76,19 @@ export function AnimatedSphere() {
 
       // Draw points
       points.forEach((point) => {
-        const alpha = 0.2 + (point.z + 1) * 0.4;
-        ctx.fillStyle = `rgba(0, 0, 0, ${alpha})`;
+        const alpha = 0.2 + (point.z + 1) * 0.5;
+        
+        // Calculate blend factor based on horizontal position across the sphere
+        // blend = 0 (left edge), blend = 1 (right edge)
+        const normalizedX = (point.x - (centerX - radius)) / (2 * radius);
+        const blend = Math.max(0, Math.min(1, normalizedX));
+        
+        // Interpolate between #0A2412 (10, 36, 18) and #D6E264 (214, 226, 100)
+        const r = Math.round(10 + blend * (214 - 10));
+        const g = Math.round(36 + blend * (226 - 36));
+        const b = Math.round(18 + blend * (100 - 18));
+        
+        ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
         ctx.fillText(point.char, point.x, point.y);
       });
 

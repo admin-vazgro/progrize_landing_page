@@ -4,12 +4,14 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { AnimatedSphere } from "./animated-sphere";
+import { useWaitlist } from "./waitlist-context";
 
-const words = ["Jobs", "Network", "Refer", "Events"];
+const words = ["Forward", "Further", "Faster", "Higher"];
 
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
   const [wordIndex, setWordIndex] = useState(0);
+  const { openWaitlist } = useWaitlist();
 
   useEffect(() => {
     setIsVisible(true);
@@ -28,7 +30,12 @@ export function HeroSection() {
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] lg:w-[800px] lg:h-[800px] opacity-40 pointer-events-none">
         <AnimatedSphere />
       </div>
-      
+
+      {/* Colorful background orbs */}
+      <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] rounded-full bg-[#D6E264]/20 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-[20%] right-[10%] w-[500px] h-[500px] rounded-full bg-[#D6E264]/15 blur-[100px] pointer-events-none" />
+      <div className="absolute top-[40%] left-[50%] -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-[#D6E264]/10 blur-[100px] pointer-events-none" />
+
       {/* Subtle grid lines */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
         {[...Array(8)].map((_, i) => (
@@ -54,32 +61,30 @@ export function HeroSection() {
           />
         ))}
       </div>
-      
+
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 py-32 lg:py-40">
         {/* Eyebrow */}
-        <div 
-          className={`mb-8 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
+        <div
+          className={`mb-8 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
         >
           <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground">
             <span className="w-8 h-px bg-foreground/30" />
-            The platform for modern teams
+            WITH ACCESS OPEN
           </span>
         </div>
-        
+
         {/* Main headline */}
         <div className="mb-12">
-          <h1 
-            className={`text-[clamp(3rem,12vw,10rem)] font-display leading-[0.9] tracking-tight transition-all duration-1000 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+          <h1
+            className={`text-[clamp(2rem,12vw,7rem)] font-display leading-[0.9] tracking-tight transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
-            <span className="block">The platform</span>
+            <span className="block">The Career Platform</span>
             <span className="block">
-              to{" "}
+              That Moves You{" "}
               <span className="relative inline-block">
-                <span 
+                <span
                   key={wordIndex}
                   className="inline-flex"
                 >
@@ -95,64 +100,54 @@ export function HeroSection() {
                     </span>
                   ))}
                 </span>
-                <span className="absolute -bottom-2 left-0 right-0 h-3 bg-[#D6E264]" />
+                <span className="absolute -bottom-2 left-0 right-0 h-3 bg-[#D6E264] transition-all duration-500" />
               </span>
             </span>
           </h1>
         </div>
-        
+
         {/* Description */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-end">
-          <p 
-            className={`text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-xl transition-all duration-700 delay-200 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
+          <p
+            className={`text-l lg:text-l text-muted-foreground leading-relaxed max-w-xl transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
           >
-            Your toolkit to stop configuring and start innovating. 
-            Securely build, deploy, and scale the best experiences.
+            Stop juggling multiple disjointed tools. Progrize unifies job search, mentorship, and skill building into a single, intelligent workflow designed for growth.
           </p>
-          
+
           {/* CTAs */}
-          <div 
-            className={`flex flex-col sm:flex-row items-start gap-4 transition-all duration-700 delay-300 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
+          <div
+            className={`flex flex-col sm:flex-row items-start gap-4 transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
           >
-            <Button 
-              size="lg" 
-              className="bg-foreground hover:bg-foreground/90 text-background px-8 h-14 text-base rounded-full group"
+            <Button
+              className="bg-foreground hover:bg-foreground/90 text-background w-52 py-8 text-base rounded-full group"
+              onClick={openWaitlist}
             >
-              Start free trial
+              Join the Waitlist
               <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="h-14 px-8 text-base rounded-full border-foreground/20 hover:bg-foreground/5"
-            >
-              Watch demo
-            </Button>
+
           </div>
         </div>
-        
+
       </div>
-      
+
       {/* Stats marquee - full width outside container */}
-      <div 
-        className={`absolute bottom-24 left-0 right-0 transition-all duration-700 delay-500 ${
-          isVisible ? "opacity-100" : "opacity-0"
-        }`}
+      <div
+        className={`absolute bottom-24 left-0 right-0 transition-all duration-700 delay-500 ${isVisible ? "opacity-100" : "opacity-0"
+          }`}
       >
         <div className="flex gap-16 marquee whitespace-nowrap">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex gap-16">
               {[
-                { value: "20 days", label: "saved on builds", company: "NETFLIX" },
-                { value: "98%", label: "faster deployment", company: "STRIPE" },
-                { value: "300%", label: "throughput increase", company: "LINEAR" },
-                { value: "6x", label: "faster to ship", company: "NOTION" },
+                { value: "2,400+", label: "Beta Users", company: "PROGRIZE" },
+                { value: "15k+", label: "CVs Analysed", company: "AI PLATFORM" },
+                { value: "350+", label: "Active Mentors", company: "COMMUNITY" },
+                { value: "92%", label: "Placement Rate", company: "SUCCESS" },
               ].map((stat) => (
-                <div key={`${stat.company}-${i}`} className="flex items-baseline gap-4">
+                <div key={`${stat.company}-${i}`} className="flex items-center gap-4">
                   <span className="text-4xl lg:text-5xl font-display">{stat.value}</span>
                   <span className="text-sm text-muted-foreground">
                     {stat.label}
@@ -164,9 +159,9 @@ export function HeroSection() {
           ))}
         </div>
       </div>
-      
+
       {/* Scroll indicator */}
-      
+
     </section>
   );
 }

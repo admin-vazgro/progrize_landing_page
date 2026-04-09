@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls /Users/rohith/Desktop/landing/.env*)",
+      "Bash(npm run:*)",
+      "Bash(echo \"Server PID: $!\")",
+      "Bash(curl -s -X POST http://localhost:3000/api/waitlist -H 'Content-Type: application/json' -d '{\"email\":\"test@example.com\"}')",
+      "Read(//private/tmp/**)",
+      "Bash(curl -s -X POST http://localhost:3000/api/waitlist -H 'Content-Type: application/json' -d '{\"email\":\"test-progrize@mailinator.com\"}')",
+      "Bash(curl -s https://api.resend.com/domains -H 'Authorization: Bearer re_RTZzjqh2_6RZFSrRZep3WMcwg2P3b7ndZ')",
+      "Bash(python3 -m json.tool)",
+      "Bash(curl -s https://api.resend.com/domains -H \"Authorization: Bearer re_RTZzjqh2_6RZFSrRZep3WMcwg2P3b7ndZ\")",
+      "Bash(curl -s -X POST https://api.resend.com/emails -H 'Authorization: Bearer re_RTZzjqh2_6RZFSrRZep3WMcwg2P3b7ndZ' -H 'Content-Type: application/json' -d '{:*)"
+    ]
+  }
+}

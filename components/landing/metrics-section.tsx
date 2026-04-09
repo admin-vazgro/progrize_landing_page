@@ -45,29 +45,29 @@ function AnimatedCounter({ end, suffix = "", prefix = "" }: { end: number; suffi
 }
 
 const metrics = [
-  { 
-    value: 2847392, 
-    suffix: "", 
+  {
+    value: 2400,
+    suffix: "+",
     prefix: "",
-    label: "API requests today",
+    label: "Beta Users",
   },
-  { 
-    value: 99, 
-    suffix: ".99%", 
+  {
+    value: 15000,
+    suffix: "+",
     prefix: "",
-    label: "Uptime this quarter",
+    label: "CVs Analysed",
   },
-  { 
-    value: 23, 
-    suffix: "ms", 
+  {
+    value: 350,
+    suffix: "+",
     prefix: "",
-    label: "Average response time",
+    label: "Active Mentors",
   },
-  { 
-    value: 184, 
-    suffix: "", 
+  {
+    value: 92,
+    suffix: "%",
     prefix: "",
-    label: "Countries served",
+    label: "Placement Rate",
   },
 ];
 
@@ -103,21 +103,21 @@ export function MetricsSection() {
   }, []);
 
   return (
-    <section id="studio" ref={sectionRef} className="relative py-24 lg:py-32 border-y border-foreground/10">
+    <section id="metrics" ref={sectionRef} className="relative py-24 lg:py-32 border-y border-foreground/10">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16 lg:mb-24">
           <div>
             <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
               <span className="w-8 h-px bg-foreground/30" />
-              Live metrics
+              BY THE NUMBERS
             </span>
             <h2
               className={`text-4xl lg:text-6xl font-display tracking-tight transition-all duration-700 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              Performance you
+              Results you
               <br />
               can measure.
             </h2>

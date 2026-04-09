@@ -6,51 +6,50 @@ import { Copy, Check } from "lucide-react";
 const codeExamples = [
   {
     label: "Install",
-    code: `npm install @optimus/sdk
+    code: `npm install @progrize/sdk
 
 # or
-yarn add @optimus/sdk
-pnpm add @optimus/sdk`,
+yarn add @progrize/sdk
+pnpm add @progrize/sdk`,
   },
   {
     label: "Initialize",
-    code: `import { Optimus } from '@optimus/sdk'
+    code: `import { Progrize } from '@progrize/sdk'
 
-const optimus = new Optimus({
-  apiKey: process.env.OPTIMUS_KEY
+const progrize = new Progrize({
+  apiKey: process.env.PROGRIZE_KEY
 })`,
   },
   {
-    label: "Deploy",
-    code: `const app = await optimus.deploy({
-  name: 'my-app',
-  region: 'auto',
-  scaling: {
-    min: 1,
-    max: 100
+    label: "Match",
+    code: `const matches = await progrize.jobs.match({
+  profile: 'user_profile_id',
+  preferences: {
+    remote: true,
+    roles: ['Engineer', 'Designer']
   }
 })
 
-console.log('Live at:', app.url)`,
+console.log('Matched:', matches.length)`,
   },
 ];
 
 const features = [
-  { 
-    title: "TypeScript native", 
-    description: "Full type safety with auto-generated types."
+  {
+    title: "TypeScript native",
+    description: "Full type safety with auto-generated types.",
   },
-  { 
-    title: "Zero config", 
-    description: "Sensible defaults that just work."
+  {
+    title: "AI-powered matching",
+    description: "Intelligent job matching based on skills and experience.",
   },
-  { 
-    title: "Edge-ready", 
-    description: "Runs anywhere: Node, Deno, Bun, browsers."
+  {
+    title: "Real-time updates",
+    description: "Live job alerts and application status tracking.",
   },
-  { 
-    title: "12KB gzipped", 
-    description: "Lightweight with zero dependencies."
+  {
+    title: "Easy integration",
+    description: "Embed Progrize into your existing HR workflows.",
   },
 ];
 
@@ -119,16 +118,16 @@ export function DevelopersSection() {
           >
             <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
               <span className="w-8 h-px bg-foreground/30" />
-              For developers
+              FOR ORGANISATIONS
             </span>
             <h2 className="text-4xl lg:text-6xl font-display tracking-tight mb-8">
-              Built by devs.
+              Built for hiring
               <br />
-              <span className="text-muted-foreground">For devs.</span>
+              <span className="text-muted-foreground">at scale.</span>
             </h2>
             <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
-              A thoughtfully designed SDK that gets out of your way. 
-              Ship faster with intuitive APIs and exceptional documentation.
+              The Progrize API lets you integrate talent matching, CV analysis,
+              and job posting directly into your existing HR tools and workflows.
             </p>
             
             {/* Features */}
@@ -220,11 +219,11 @@ export function DevelopersSection() {
             {/* Links */}
             <div className="mt-6 flex items-center gap-6 text-sm">
               <a href="#" className="text-foreground hover:underline underline-offset-4">
-                Read the docs
+                API Documentation
               </a>
               <span className="text-foreground/20">|</span>
               <a href="#" className="text-muted-foreground hover:text-foreground">
-                View on GitHub
+                Contact Sales
               </a>
             </div>
           </div>

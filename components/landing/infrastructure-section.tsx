@@ -3,12 +3,10 @@
 import { useEffect, useState, useRef } from "react";
 
 const locations = [
-  { city: "San Francisco", region: "US West", latency: "12ms" },
-  { city: "New York", region: "US East", latency: "18ms" },
-  { city: "London", region: "Europe", latency: "24ms" },
-  { city: "Tokyo", region: "Asia Pacific", latency: "32ms" },
-  { city: "Sydney", region: "Oceania", latency: "45ms" },
-  { city: "Sao Paulo", region: "South America", latency: "38ms" },
+  { city: "India", region: "Asia", latency: "1,200+ members" },
+  { city: "UK", region: "Europe", latency: "500+ members" },
+  { city: "USA", region: "North America", latency: "500+ members" },
+  { city: "Ireland", region: "Europe", latency: "200+ members" },
 ];
 
 export function InfrastructureSection() {
@@ -36,7 +34,7 @@ export function InfrastructureSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden">
+    <section id="global" ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left: Content */}
@@ -47,31 +45,31 @@ export function InfrastructureSection() {
           >
             <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
               <span className="w-8 h-px bg-foreground/30" />
-              Infrastructure
+              GROWING GLOBALLY
             </span>
             <h2 className="text-4xl lg:text-6xl font-display tracking-tight mb-8">
-              Global by
+              Building careers
               <br />
-              default.
+              worldwide.
             </h2>
             <p className="text-xl text-muted-foreground leading-relaxed mb-12">
-              Deploy once, run everywhere. Our edge network spans 17 data centers 
-              across 6 continents, delivering sub-50ms latency to 99% of the world.
+              Progrize is growing fast across the globe. Professionals from 5+ countries
+              have already joined the platform to take control of their career journey.
             </p>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8">
               <div>
-                <div className="text-4xl lg:text-5xl font-display mb-2">17</div>
-                <div className="text-sm text-muted-foreground">Data centers</div>
+                <div className="text-4xl lg:text-5xl font-display mb-2">5+</div>
+                <div className="text-sm text-muted-foreground">Countries</div>
               </div>
               <div>
-                <div className="text-4xl lg:text-5xl font-display mb-2">99.99%</div>
-                <div className="text-sm text-muted-foreground">Uptime SLA</div>
+                <div className="text-4xl lg:text-5xl font-display mb-2">2,400+</div>
+                <div className="text-sm text-muted-foreground">Beta Users</div>
               </div>
               <div>
-                <div className="text-4xl lg:text-5xl font-display mb-2">&lt;50ms</div>
-                <div className="text-sm text-muted-foreground">Global latency</div>
+                <div className="text-4xl lg:text-5xl font-display mb-2">350+</div>
+                <div className="text-sm text-muted-foreground">Active Mentors</div>
               </div>
             </div>
           </div>
@@ -85,10 +83,10 @@ export function InfrastructureSection() {
             <div className="border border-foreground/10">
               {/* Header */}
               <div className="px-6 py-4 border-b border-foreground/10 flex items-center justify-between">
-                <span className="text-sm font-mono text-muted-foreground">Edge Network</span>
+                <span className="text-sm font-mono text-muted-foreground">Early adopters by region</span>
                 <span className="flex items-center gap-2 text-xs font-mono text-green-600">
                   <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                  All operational
+                  Access open
                 </span>
               </div>
 

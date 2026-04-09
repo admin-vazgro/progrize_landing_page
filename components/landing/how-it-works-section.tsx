@@ -5,38 +5,39 @@ import { useEffect, useRef, useState } from "react";
 const steps = [
   {
     number: "I",
-    title: "Connect your tools",
-    description: "Integrate with your existing stack in minutes. We support 200+ data sources out of the box.",
-    code: `import { optimus } from '@optimus/core'
-
-optimus.connect({
-  source: 'your-database',
-  sync: true
+    title: "Hire Candidates",
+    description: "Access a vetted pool of active job seekers and filter by skills, experience, and culture fit. AI-powered matching surfaces the right talent instantly.",
+    code: `progrize.talent.search({
+  skills: ['React', 'TypeScript'],
+  experience: '3-5 years',
+  location: 'Remote',
+  availability: 'immediate'
 })`,
   },
   {
     number: "II",
-    title: "Build your workflow",
-    description: "Design powerful automations with our visual builder or write code directly.",
-    code: `optimus.workflow('process', {
-  trigger: 'event',
-  actions: [
-    'validate',
-    'transform', 
-    'deliver'
+    title: "Recruiter Dashboard",
+    description: "Curate lists of potential future hires to speed up your recruiting process. Track candidates from discovery through to offer in one place.",
+    code: `progrize.pipeline.create({
+  role: 'Senior Engineer',
+  stages: [
+    'sourced',
+    'screening',
+    'interview',
+    'offer'
   ]
 })`,
   },
   {
     number: "III",
-    title: "Ship to production",
-    description: "Deploy globally with zero configuration. Your app goes live in under 30 seconds.",
-    code: `optimus.deploy({
-  target: 'production',
-  regions: 'auto'
-})
-
-// Deployed to 12 regions`,
+    title: "Showcase Culture",
+    description: "Attract like-minded talent by highlighting your company values and work environment. Build an employer brand that resonates with the right people.",
+    code: `progrize.brand.publish({
+  company: 'Acme Corp',
+  values: ['innovation', 'growth'],
+  perks: ['remote', 'equity'],
+  openRoles: 12
+})`,
   },
 ];
 
@@ -88,14 +89,14 @@ export function HowItWorksSection() {
         <div className="mb-16 lg:mb-24">
           <span className="inline-flex items-center gap-3 text-sm font-mono text-background/50 mb-6">
             <span className="w-8 h-px bg-background/30" />
-            Process
+            FOR ORGANISATIONS
           </span>
           <h2
             className={`text-4xl lg:text-6xl font-display tracking-tight transition-all duration-700 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            Three steps.
+            One platform.
             <br />
             <span className="text-background/50">Infinite possibilities.</span>
           </h2>
@@ -151,7 +152,7 @@ export function HowItWorksSection() {
                   <div className="w-3 h-3 rounded-full bg-background/20" />
                   <div className="w-3 h-3 rounded-full bg-background/20" />
                 </div>
-                <span className="text-xs font-mono text-background/40">workflow.ts</span>
+                <span className="text-xs font-mono text-background/40">progrize.ts</span>
               </div>
 
               {/* Code content */}

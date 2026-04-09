@@ -5,26 +5,26 @@ import { useEffect, useRef, useState } from "react";
 const features = [
   {
     number: "01",
-    title: "Instant Deployment",
-    description: "Push to production in seconds. Our edge network ensures your applications load instantly, anywhere in the world.",
+    title: "Get Discovered",
+    description: "Let companies apply to you with an optimised profile that highlights your potential. Stand out with AI-powered profile matching and an active scout list.",
     visual: "deploy",
   },
   {
     number: "02",
-    title: "AI-Native Workflows",
-    description: "Build intelligent applications with built-in AI capabilities. From inference to training, everything scales automatically.",
+    title: "Get Opportunities",
+    description: "Access the best jobs and exclusive deals on partner events, all tailored to your career goals. AI-powered matching connects you to roles that fit.",
     visual: "ai",
   },
   {
     number: "03",
-    title: "Real-time Collaboration",
-    description: "Work together seamlessly. Live preview, instant feedback, and version control that actually makes sense.",
+    title: "Get Better",
+    description: "Access virtual 1:1 sessions and mentorship from 1,000+ industry-leading experts. Book workshops and get guidance from people who've been there.",
     visual: "collab",
   },
   {
     number: "04",
-    title: "Enterprise Security",
-    description: "Bank-grade encryption, SOC 2 compliance, and granular access controls. Your data stays yours.",
+    title: "Stay Organised",
+    description: "Keep track of every application, interview, and offer in one clear, streamlined dashboard. Never lose sight of where you stand in your job search.",
     visual: "security",
   },
 ];
@@ -51,7 +51,7 @@ function DeployVisual() {
             width="120"
             height="10"
             rx="2"
-            fill="currentColor"
+            fill="#D6E264"
             opacity="0.15"
           >
             <animate
@@ -73,7 +73,7 @@ function DeployVisual() {
       </g>
       
       {/* Progress indicator */}
-      <circle cx="100" cy="155" r="3" fill="currentColor" opacity="0.3">
+      <circle cx="100" cy="155" r="3" fill="#D6E264" opacity="0.3">
         <animate attributeName="opacity" values="0.3;1;0.3" dur="1s" repeatCount="indefinite" />
       </circle>
     </svg>
@@ -95,7 +95,7 @@ function AIVisual() {
   return (
     <svg viewBox="0 0 200 160" className="w-full h-full">
       {/* Central node */}
-      <circle cx="100" cy="80" r="12" fill="currentColor">
+      <circle cx="100" cy="80" r="12" fill="#D6E264">
         <animate attributeName="r" values="12;14;12" dur="2s" repeatCount="indefinite" />
       </circle>
       
@@ -128,7 +128,7 @@ function AIVisual() {
               cy={y}
               r="6"
               fill="none"
-              stroke="currentColor"
+              stroke="#D6E264"
               strokeWidth="2"
             >
               <animate
@@ -144,7 +144,7 @@ function AIVisual() {
       })}
       
       {/* Pulse rings */}
-      <circle cx="100" cy="80" r="30" fill="none" stroke="currentColor" strokeWidth="1" opacity="0">
+      <circle cx="100" cy="80" r="30" fill="none" stroke="#D6E264" strokeWidth="1" opacity="0">
         <animate attributeName="r" values="20;60" dur="2s" repeatCount="indefinite" />
         <animate attributeName="opacity" values="0.5;0" dur="2s" repeatCount="indefinite" />
       </circle>
@@ -175,7 +175,7 @@ function CollabVisual() {
       </line>
       
       {/* Data packet */}
-      <circle r="4" fill="currentColor">
+      <circle r="4" fill="#D6E264">
         <animateMotion dur="1.5s" repeatCount="indefinite">
           <mpath href="#dataPath" />
         </animateMotion>
@@ -184,7 +184,7 @@ function CollabVisual() {
       
       {/* Sync indicator */}
       <g transform="translate(100, 130)">
-        <circle r="6" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle r="6" fill="none" stroke="#D6E264" strokeWidth="2">
           <animate attributeName="r" values="6;10;6" dur="1s" repeatCount="indefinite" />
           <animate attributeName="opacity" values="1;0.3;1" dur="1s" repeatCount="indefinite" />
         </circle>
@@ -207,7 +207,7 @@ function SecurityVisual() {
       {/* Inner shield */}
       <path
         d="M 100 35 L 135 50 L 135 85 Q 135 115 100 128 Q 65 115 65 85 L 65 50 Z"
-        fill="currentColor"
+        fill="#D6E264"
         opacity="0.1"
       >
         <animate attributeName="opacity" values="0.1;0.2;0.1" dur="2s" repeatCount="indefinite" />
@@ -228,7 +228,7 @@ function SecurityVisual() {
       <rect x="98" y="82" width="4" height="8" fill="white" />
       
       {/* Scan lines */}
-      <line x1="60" y1="60" x2="140" y2="60" stroke="currentColor" strokeWidth="1" opacity="0">
+      <line x1="60" y1="60" x2="140" y2="60" stroke="#D6E264" strokeWidth="1" opacity="0">
         <animate attributeName="y1" values="40;120;40" dur="3s" repeatCount="indefinite" />
         <animate attributeName="y2" values="40;120;40" dur="3s" repeatCount="indefinite" />
         <animate attributeName="opacity" values="0;0.5;0" dur="3s" repeatCount="indefinite" />
@@ -295,7 +295,7 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
           
           {/* Visual */}
           <div className="flex justify-center lg:justify-end">
-            <div className="w-48 h-40 text-foreground">
+            <div className="w-48 h-40 text-[#59631C]">
               <AnimatedVisual type={feature.visual} />
             </div>
           </div>
@@ -332,16 +332,16 @@ export function FeaturesSection() {
         <div className="mb-16 lg:mb-24">
           <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
             <span className="w-8 h-px bg-foreground/30" />
-            Capabilities
+            WHY PROGRIZE?
           </span>
           <h2
             className={`text-4xl lg:text-6xl font-display tracking-tight transition-all duration-700 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            Everything you need.
+            A Complete Ecosystem
             <br />
-            <span className="text-muted-foreground">Nothing you don&apos;t.</span>
+            <span className="text-muted-foreground">for Your Career.</span>
           </h2>
         </div>
 

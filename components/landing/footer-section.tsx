@@ -4,35 +4,30 @@ import { ArrowUpRight } from "lucide-react";
 import { AnimatedWave } from "./animated-wave";
 
 const footerLinks = {
-  Product: [
+  Platform: [
     { name: "Features", href: "#features" },
-    { name: "How it works", href: "#how-it-works" },
+    { name: "For Organisations", href: "#how-it-works" },
+    { name: "Community", href: "#integrations" },
     { name: "Pricing", href: "#pricing" },
-    { name: "Integrations", href: "#integrations" },
+    { name: "Testimonials", href: "#testimonials" },
   ],
-  Developers: [
-    { name: "Documentation", href: "#developers" },
-    { name: "API Reference", href: "#" },
-    { name: "SDK", href: "#developers" },
-    { name: "Status", href: "#" },
+  Resources: [
+    { name: "Blog", href: "#" },
+    { name: "Career Guides", href: "#" },
+    { name: "Help Center", href: "#" },
   ],
   Company: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Careers", href: "#", badge: "Hiring" },
+    { name: "About Us", href: "#" },
     { name: "Contact", href: "#" },
-  ],
-  Legal: [
-    { name: "Privacy", href: "#" },
-    { name: "Terms", href: "#" },
-    { name: "Security", href: "#security" },
+    { name: "Privacy Policy", href: "#" },
+    { name: "Terms of Service", href: "#" },
   ],
 };
 
 const socialLinks = [
   { name: "Twitter", href: "#" },
-  { name: "GitHub", href: "#" },
   { name: "LinkedIn", href: "#" },
+  { name: "Instagram", href: "#" },
 ];
 
 export function FooterSection() {
@@ -49,13 +44,13 @@ export function FooterSection() {
           <div className="grid grid-cols-2 md:grid-cols-6 gap-12 lg:gap-8">
             {/* Brand Column */}
             <div className="col-span-2">
-              <a href="#" className="inline-flex items-center gap-2 mb-6">
-                <span className="text-2xl font-display">Optimus</span>
-                <span className="text-xs text-muted-foreground font-mono">TM</span>
+              <a href="#" className="inline-flex items-center gap-2 mb-2">
+                <span className="text-2xl font-display">Progrize</span>
               </a>
+              <p className="text-xs text-muted-foreground font-mono mb-6">From the House of Vazgro Labs</p>
 
               <p className="text-muted-foreground leading-relaxed mb-8 max-w-xs">
-                The platform for teams who ship. Build, deploy, and scale with unprecedented velocity.
+                The career platform that actually moves you forward. Built for professionals who are serious about growth.
               </p>
 
               {/* Social Links */}
@@ -82,14 +77,9 @@ export function FooterSection() {
                     <li key={link.name}>
                       <a
                         href={link.href}
-                        className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-2"
+                        className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                       >
                         {link.name}
-                        {"badge" in link && link.badge && (
-                          <span className="text-xs px-2 py-0.5 bg-foreground text-background rounded-full">
-                            {link.badge}
-                          </span>
-                        )}
                       </a>
                     </li>
                   ))}
@@ -102,13 +92,13 @@ export function FooterSection() {
         {/* Bottom Bar */}
         <div className="py-8 border-t border-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            2025 Optimus. All rights reserved.
+            © 2025 Progrize. All rights reserved. A Vazgro Labs product.
           </p>
 
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
             <span className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-green-500" />
-              All systems operational
+              Platform is live
             </span>
           </div>
         </div>
