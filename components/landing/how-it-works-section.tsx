@@ -115,9 +115,9 @@ export function HowItWorksSection() {
                   activeStep === index ? "opacity-100" : "opacity-40 hover:opacity-70"
                 }`}
               >
-                <div className="flex items-start gap-6">
-                  <span className="font-display text-3xl text-background/30">{step.number}</span>
-                  <div className="flex-1">
+                <div className="flex items-start gap-4 lg:gap-6 w-full">
+                  <span className="font-display text-3xl text-background/30 shrink-0 min-w-[2rem]">{step.number}</span>
+                  <div className="flex-1 min-w-0">
                     <h3 className="text-2xl lg:text-3xl font-display mb-3 group-hover:translate-x-2 transition-transform duration-300">
                       {step.title}
                     </h3>
@@ -156,8 +156,8 @@ export function HowItWorksSection() {
               </div>
 
               {/* Code content */}
-              <div className="p-8 font-mono text-sm min-h-[280px]">
-                <pre className="text-background/70">
+              <div className="p-4 lg:p-8 font-mono text-xs sm:text-sm min-h-[280px] overflow-x-auto w-full">
+                <pre className="text-background/70 min-w-max">
                   {steps[activeStep].code.split('\n').map((line, lineIndex) => (
                     <div 
                       key={`${activeStep}-${lineIndex}`} 
