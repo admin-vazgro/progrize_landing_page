@@ -62,7 +62,7 @@ export function HeroSection() {
         ))}
       </div>
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 py-32 lg:py-40">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 pt-32 pb-48 lg:py-40">
         {/* Eyebrow */}
         <div
           className={`mb-8 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
@@ -135,7 +135,7 @@ export function HeroSection() {
 
       {/* Stats marquee - full width outside container */}
       <div
-        className={`absolute bottom-24 left-0 right-0 transition-all duration-700 delay-500 ${isVisible ? "opacity-100" : "opacity-0"
+        className={`absolute bottom-12 lg:bottom-24 left-0 right-0 transition-all duration-700 delay-500 ${isVisible ? "opacity-100" : "opacity-0"
           }`}
       >
         <div className="flex gap-16 marquee whitespace-nowrap">
